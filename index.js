@@ -1,23 +1,103 @@
+
 //BOOK COMPONENT: SETS TEMPLATE FOR CARD IMG AND TITLE
 class BookComponent {
 
     constructor(title, cover, description) {
         this.title = title;
         this.cover = cover;
+        this.description = description;
         this.template = `
         <div class="card" style="width: 18rem;">
         <img class="card-img-top" src="${cover}" alt="Card image cap">
         <div class="card-body">
           <h5 class="card-title">${this.title}</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
-        </div>
-      </div>`
+          
+          <a href="#" class="btn btn-primary" id="descriptionBtn">Show Description</a></div></div>
+          `
+
+
+        this.descriptionForm = `
+    <div class="card">
+    <div class="card-body" id="descriptionText">${this.description}</div>
+</div>`
+
     }
+
+
 }
+
+
+
+
 
 class BookListComponent {
 
+    constructor() {
+        this.bookList = [
+            { title: "Cloudy With A Chance Of MeatBalls", cover: "https://\/images-na.ssl-images-amazon.com/images/I/51tU%2B0j30JL.jpg", bookDescription: "The beloved, bestselling tale of edible weather is brought to life! If food dropped like rain from the sky, wouldn't it be marvelous! Or would it? It could, after all, be messy. And you'd have no choice. What if you didn't like what fell? Or what if too much came? Have you ever thought of what it might be like to be squashed flat by a pancake?" },
+            { title: "Test1", cover: "images/CoffeeCup.jpg", bookDescription: "The beloved, bestselling tale of edible weather is brought to life! If food dropped like rain from the sky, wouldn't it be marvelous! Or would it? It could, after all, be messy. And you'd have no choice. What if you didn't like what fell? Or what if too much came? Have you ever thought of what it might be like to be squashed flat by a pancake?" },
+            { title: "Test2", cover: "images/Dock.jpg", bookDescription: "The beloved, bestselling tale of edible weather is brought to life! If food dropped like rain from the sky, wouldn't it be marvelous! Or would it? It could, after all, be messy. And you'd have no choice. What if you didn't like what fell? Or what if too much came? Have you ever thought of what it might be like to be squashed flat by a pancake?" },
+            { title: "test3", cover: "images/Horse.jpg", bookDescription: "The beloved, bestselling tale of edible weather is brought to life! If food dropped like rain from the sky, wouldn't it be marvelous! Or would it? It could, after all, be messy. And you'd have no choice. What if you didn't like what fell? Or what if too much came? Have you ever thought of what it might be like to be squashed flat by a pancake?" },
+            { title: "test3", cover: "images/jazz.jpg", bookDescription: "The beloved, bestselling tale of edible weather is brought to life! If food dropped like rain from the sky, wouldn't it be marvelous! Or would it? It could, after all, be messy. And you'd have no choice. What if you didn't like what fell? Or what if too much came? Have you ever thought of what it might be like to be squashed flat by a pancake?" }
+        ];
+
+
+        this.template = `
+        <div 
+        ${this.bookList.map(e => new BookComponent(e.title, e.cover, e.bookDescription).template).join("")}
+        </div > `
+    }
+
+
+
 }
 
-// BUTTON COMPONENT
+// [...buttons].forEach((button) => {
+//     button.addEventListener('click', () => {
+//       console.log("spread forEach worked");
+
+
+document.getElementById("root").innerHTML += `${new BookListComponent().template}`
+
+var buttons = document.querySelectorAll("descriptionBtn");
+buttons.forEach((button) => {
+    button.addEventListener('click', function (e) {
+
+        // if(e.target && e.target.id == "descriptionBtn") {
+
+        if (document.getElementById('descriptionBtn').innerText == "Hide Description") {
+            document.getElementById("descriptionText").innerText = ""
+
+            document.getElementById("descriptionBtn").innerText = "Show Description"
+
+        } else if (document.getElementById("descriptionBtn").innerText = "Show Description") {
+
+            document.getElementById("descriptionText").innerText += 
+            document.getElementById('descriptionBtn').innerText = "Hide Description"
+        }
+    })
+})
+
+document.getElementById("root").innerHTML = `${new BookListComponent().template}`;
+
+// document.querySelector("descriptionBtn").array.forEach(element => {
+
+// });
+// document.getElementById("descriptionBtn").addEventListener('click', function (e) {
+
+//     if (e.target && e.target.id == "descriptionBtn") {
+
+//         if (document.getElementById('descriptionBtn').innerText == "Hide Description") {
+//             document.getElementById("descriptionText").innerText = ""
+
+//             document.getElementById("descriptionBtn").innerText = "Show Description"
+
+//         } else if (document.getElementById("descriptionBtn").innerText = "Show Description") {
+
+//             document.getElementById("descriptionText").innerText += target.BookListComponent(i).description;
+//             document.getElementById('descriptionBtn').innerText = "Hide Description"
+//         }
+//     }
+// })
+
+
