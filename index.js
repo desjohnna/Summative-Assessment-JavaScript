@@ -53,7 +53,7 @@ class BookListComponent {
 document.getElementById("cardDeck").innerHTML = `${new BookListComponent().template}`
 
 
-document.getElementById(e.descriptionBtn).value).
+// document.getElementById(e.descriptionBtn).value).
 document.getElementById("descriptionBtn").addEventListener('click', function (e) {
     e.preventDefault()
 
