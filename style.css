@@ -13,7 +13,9 @@ background: url(images/libraryBackground.jpg);
 .card-body{
     /* background-color: rgb(148, 166, 182); */
     text-align: center;
+  
 } 
+
 
 .card-title {
     text-align: center;
@@ -27,4 +29,8 @@ background: url(images/libraryBackground.jpg);
 
 #cardDeck{
     margin-bottom: 20px;
+}
+
+#descriptionBox{
+    text-align: center;
 }
