@@ -1,0 +1,30 @@
+/* body {
+background: url(images/libraryBackground.jpg);
+} */
+
+
+.jumbotron{
+    /* background-color:#791f3ac4 ; */
+    font-weight: bolder;
+    height: 15rem;
+    
+}
+
+.card-body{
+    /* background-color: rgb(148, 166, 182); */
+    text-align: center;
+} 
+
+.card-title {
+    text-align: center;
+}
+
+.card-img-top {
+        width: 100%;
+        height: 22rem;
+        object-fit: cover;
+}
+
+#cardDeck{
+    margin-bottom: 20px;
+}
